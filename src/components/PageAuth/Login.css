@@ -1,0 +1,39 @@
+.login-form {
+    padding: 40px;
+    border: 3px solid #a749ff;
+    border-radius: 6px;
+}
+.login-form p button {
+    border: none;
+    background-color: transparent;
+    color: rgb(255, 153, 0);
+}
+.login-form form input[type="submit"] {
+    background-color: rgb(245, 206, 147);
+    font-weight: 600;
+}
+.or-right {
+    width: 40%;
+    border: 1px solid #909090;
+}
+.or-left {
+    width: 40%;
+    border: 1px solid #909090;
+}
+.or {
+    width: 10%;
+    text-align: center;
+    font-weight: 600;
+    color: #909090;
+    margin-top: -6px;
+}
+.login-form .google-log button {
+    width: 100%;
+    padding: 6px;
+    border: 2px solid #909090;
+    background-color: transparent;
+    font-weight: 500;
+}
+.login-form .google-log button span {
+    color: crimson;
+}

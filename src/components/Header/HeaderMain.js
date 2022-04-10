@@ -9,6 +9,7 @@ import {
     faPhone,
     faEnvelope,
     faSearch,
+    faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faFacebook,
@@ -17,6 +18,7 @@ import {
     faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import "./HeaderMain.css";
+import { Link, NavLink } from "react-router-dom";
 
 const HeaderMain = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
@@ -37,20 +39,65 @@ const HeaderMain = () => {
                     </div>
                     <div className="main-menu d-none d-lg-block">
                         <ul>
-                            <li className="active">
-                                <a href=" ">Home</a>
+                            <li>
+                                <NavLink
+                                    to="/"
+                                    className={(navInfo) =>
+                                        navInfo.isActive ? "active" : " "
+                                    }
+                                >
+                                    Home
+                                </NavLink>
                             </li>
                             <li>
-                                <a href=" ">Shop</a>
+                                <NavLink
+                                    to="/shop"
+                                    className={(navInfo) =>
+                                        navInfo.isActive ? "active" : " "
+                                    }
+                                >
+                                    Shop
+                                </NavLink>
                             </li>
                             <li>
-                                <a href=" ">Collection</a>
+                                <NavLink
+                                    to="/collection"
+                                    className={(navInfo) =>
+                                        navInfo.isActive ? "active" : " "
+                                    }
+                                >
+                                    Collection
+                                </NavLink>
                             </li>
                             <li>
-                                <a href=" ">Blogs</a>
+                                <NavLink
+                                    to="/blogs"
+                                    className={(navInfo) =>
+                                        navInfo.isActive ? "active" : " "
+                                    }
+                                >
+                                    Blogs
+                                </NavLink>
                             </li>
                             <li>
-                                <a href=" ">Contact us</a>
+                                <NavLink
+                                    to="/contact"
+                                    className={(navInfo) =>
+                                        navInfo.isActive ? "active" : " "
+                                    }
+                                >
+                                    Contact Us
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/auth"
+                                    className={(navInfo) =>
+                                        navInfo.isActive ? "active" : " "
+                                    }
+                                >
+                                    Login Register
+                                </NavLink>
                             </li>
                         </ul>
                     </div>
@@ -67,6 +114,78 @@ const HeaderMain = () => {
                             <FontAwesomeIcon
                                 icon={faShoppingCart}
                             ></FontAwesomeIcon>
+                            <div className="cart-summery">
+                                <ul>
+                                    <li>
+                                        <div className="cart-summery-img">
+                                            <img
+                                                src="images/furniture/1.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="cart-summery-info">
+                                            <p>Lorem Ipsum Furniture one</p>
+                                            <p>
+                                                Qty: <span>1</span>
+                                            </p>
+                                            <p>$40.00</p>
+                                        </div>
+                                        <div className="cart-summery-icon">
+                                            <FontAwesomeIcon
+                                                icon={faTrash}
+                                            ></FontAwesomeIcon>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="cart-summery-img">
+                                            <img
+                                                src="images/furniture/2.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="cart-summery-info">
+                                            <p>Lorem Ipsum Furniture two</p>
+                                            <p>
+                                                Qty: <span>1</span>
+                                            </p>
+                                            <p>$30.00</p>
+                                        </div>
+                                        <div className="cart-summery-icon">
+                                            <FontAwesomeIcon
+                                                icon={faTrash}
+                                            ></FontAwesomeIcon>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="cart-summery-img">
+                                            <img
+                                                src="images/furniture/3.jpg"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="cart-summery-info">
+                                            <p>Lorem Ipsum Furniture three</p>
+                                            <p>
+                                                Qty: <span>1</span>
+                                            </p>
+                                            <p>$46.00</p>
+                                        </div>
+                                        <div className="cart-summery-icon">
+                                            <FontAwesomeIcon
+                                                icon={faTrash}
+                                            ></FontAwesomeIcon>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div className="cart-summery-cost d-flex justify-content-between align-items-center">
+                                    <p>Total</p>
+                                    <p>$220.00</p>
+                                </div>
+                                <div className="cart-summery-btns">
+                                    <a href=" ">checkout</a>
+                                    <a href=" ">view cart</a>
+                                </div>
+                            </div>
                         </div>
                         <div className="toggle-icon d-block d-lg-none">
                             <button onClick={() => handleMobileMenu(true)}>

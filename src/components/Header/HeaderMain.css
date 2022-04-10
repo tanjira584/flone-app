@@ -24,7 +24,7 @@
 .main-menu ul li a:hover {
     color: #a749ff;
 }
-.main-menu ul li.active a {
+.main-menu ul li a.active {
     color: #a749ff;
 }
 .header-icons .user-icon,
@@ -171,4 +171,83 @@
     display: inline-block;
     padding: 5px;
     color: #343538;
+}
+/*--------------Cart Summery----------*/
+.cart-summery {
+    position: absolute;
+    width: 340px;
+    right: -26px;
+    top: 127%;
+    background: silver;
+}
+.cart-summery::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -15px;
+    right: 30px;
+    border-bottom: 20px solid silver;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+}
+.cart-summery ul {
+    max-height: 365px;
+    overflow-y: scroll;
+    list-style: none;
+    margin: 0px;
+    padding: 16px 0 0px 16px;
+}
+.cart-summery ul li {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #fff;
+}
+.cart-summery-img {
+    width: 70px;
+}
+.cart-summery-img img {
+    width: 100%;
+}
+.cart-summery-info {
+    margin-left: 8px;
+}
+.cart-summery-info p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.cart-summery-icon {
+    margin-left: auto;
+    font-size: 16px;
+    color: crimson;
+    padding: 10px;
+}
+.cart-summery-cost {
+    padding: 16px;
+}
+.cart-summery-cost p {
+    font-style: italic;
+}
+.cart-summery-btns {
+    padding: 16px;
+}
+.cart-summery-btns a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    color: #343538;
+    border: 2px solid #343538;
+    transition: 0.5s all;
+    text-align: center;
+    background: transparent;
+    margin-bottom: 12px;
 }
