@@ -183,7 +183,7 @@ const HeaderMain = () => {
                                 </div>
                                 <div className="cart-summery-btns">
                                     <a href=" ">checkout</a>
-                                    <a href=" ">view cart</a>
+                                    <Link to="/cart">view cart</Link>
                                 </div>
                             </div>
                         </div>

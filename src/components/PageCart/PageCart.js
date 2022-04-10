@@ -5,6 +5,7 @@ import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "./PageCart.css";
+import { Link } from "react-router-dom";
 
 const PageCart = () => {
     return (
@@ -163,6 +164,122 @@ const PageCart = () => {
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div className="container-md container-fluid pb-5">
+                <div className="d-flex justify-content-between align-item-center">
+                    <Link className="cart-to-shop" to="/shop">
+                        continue shipping
+                    </Link>
+                    <button className="clear-cart">Clear shopping cart</button>
+                </div>
+            </div>
+            <div className="container-md container-fluid mb-5">
+                <div className="row">
+                    <div className="col-md-4">
+                        <div className="cart-tax">
+                            <div className="cart-tax-content">
+                                <h5>Estimate Shipping And Tax</h5>
+                                <p>
+                                    Enter your destination to get a shipping
+                                    estimate.
+                                </p>
+                                <div className="mb-4">
+                                    <label
+                                        htmlFor="country"
+                                        className="form-label"
+                                    >
+                                        *Country
+                                    </label>
+                                    <select
+                                        className="form-control"
+                                        name=""
+                                        id="country"
+                                    >
+                                        <option value="">Bangladesh</option>
+                                        <option value="">France</option>
+                                        <option value="">United State</option>
+                                        <option value="">India</option>
+                                        <option value="">Pakistan</option>
+                                    </select>
+                                </div>
+                                <div className="mb-4">
+                                    <label
+                                        htmlFor="region"
+                                        className="form-label"
+                                    >
+                                        *Region / State
+                                    </label>
+                                    <select
+                                        className="form-control"
+                                        name=""
+                                        id="region"
+                                    >
+                                        <option value="">Bangladesh</option>
+                                        <option value="">France</option>
+                                        <option value="">United State</option>
+                                        <option value="">India</option>
+                                        <option value="">Pakistan</option>
+                                    </select>
+                                </div>
+                                <div className="mb-4">
+                                    <label
+                                        htmlFor="postal-code"
+                                        className="form-label"
+                                    >
+                                        *Zip / Postal Code
+                                    </label>
+                                    <input
+                                        className="form-control"
+                                        type="text"
+                                    />
+                                </div>
+                                <button className="cart-tax-btn">
+                                    Get A Quote
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4">
+                        <div className="cart-tax">
+                            <div className="cart-tax-content">
+                                <h5>Use Coupon Code</h5>
+                                <p>Enter your coupon code if you have one.</p>
+
+                                <div className="mb-4">
+                                    <input
+                                        className="form-control"
+                                        type="text"
+                                    />
+                                </div>
+                                <button className="cart-coupon-btn">
+                                    Apply Coupon
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4">
+                        <div className="cart-tax">
+                            <div className="cart-tax-content">
+                                <h5>Cart Total</h5>
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <p className="m-0">Total Products</p>
+                                    <h5>
+                                        $<span>39.00</span>
+                                    </h5>
+                                </div>
+                                <div className="grand-total d-flex justify-content-between align-items-center mb-3">
+                                    <h5>Grand Total</h5>
+                                    <h5>
+                                        $<span>339.00</span>
+                                    </h5>
+                                </div>
+                                <button className="cart-proceed-btn w-100">
+                                    Proceed to checkout
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer></Footer>

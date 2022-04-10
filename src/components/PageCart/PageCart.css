@@ -142,3 +142,69 @@
     border: none;
     background: none;
 }
+.cart-to-shop {
+    display: inline-block;
+    padding: 12px 60px;
+    background-color: #f5f5f5;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    color: #333;
+    transition: 0.5s all;
+}
+.cart-to-shop:hover {
+    background-color: #a749ff;
+    color: #fff;
+}
+.clear-cart {
+    padding: 12px 60px;
+    background-color: #f5f5f5;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    color: #333;
+    transition: 0.5s all;
+    border: none;
+    outline: none;
+}
+.clear-cart:hover {
+    background-color: #a749ff;
+    color: #fff;
+}
+
+.cart-tax {
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+.cart-tax h5 {
+    margin-top: 14px;
+}
+.cart-tax select {
+    background-color: transparent;
+}
+.cart-tax-btn,
+.cart-coupon-btn,
+.cart-proceed-btn {
+    padding: 12px 60px;
+    background-color: #a749ff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    color: #fff;
+    transition: 0.5s all;
+    border: none;
+    outline: none;
+}
+.cart-tax-btn:hover,
+.cart-coupon-btn:hover,
+.cart-proceed-btn:hover {
+    color: #fff;
+    background-color: #333;
+}
+.grand-total h5 {
+    color: #a749ff;
+}
