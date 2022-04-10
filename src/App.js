@@ -6,6 +6,7 @@ import PageCollection from "./components/PageCollection/PageCollection";
 import PageBlogs from "./components/PageBlogs/PageBlogs";
 import PageContact from "./components/PageContact/PageContact";
 import PageAuth from "./components/PageAuth/PageAuth";
+import PageCart from "./components/PageCart/PageCart";
 
 function App() {
     return (
@@ -22,7 +23,9 @@ function App() {
                     path="/contact"
                     element={<PageContact></PageContact>}
                 ></Route>
+
                 <Route path="/auth" element={<PageAuth></PageAuth>}></Route>
+                <Route path="/cart" element={<PageCart></PageCart>}></Route>
             </Routes>
         </div>
     );

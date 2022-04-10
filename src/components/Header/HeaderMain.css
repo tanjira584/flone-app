@@ -174,11 +174,15 @@
 }
 /*--------------Cart Summery----------*/
 .cart-summery {
+    display: none;
     position: absolute;
     width: 340px;
     right: -26px;
     top: 127%;
     background: silver;
+}
+.cart-icon:hover .cart-summery {
+    display: block;
 }
 .cart-summery::after {
     content: " ";

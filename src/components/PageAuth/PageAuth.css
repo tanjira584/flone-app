@@ -1,6 +1,7 @@
 .auth-container {
     width: 670px;
     margin: auto;
+    margin-bottom: 70px;
 }
 .auth-type h2 {
     padding: 0 10px;

@@ -3,35 +3,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Login.css";
 
-const Login = () => {
+const Login = ({ handleAuthForm }) => {
     return (
         <div className="login-form">
             <form>
-                <div class="mb-3">
-                    <label for="email" class="form-label">
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">
                         Email address
                     </label>
                     <input
                         type="email"
-                        class="form-control"
+                        className="form-control"
                         id="email"
                         placeholder="Enter your email"
                     />
                 </div>
-                <div class="mb-4">
-                    <label for="password" class="form-label">
+                <div className="mb-4">
+                    <label htmlFor="password" className="form-label">
                         Password
                     </label>
                     <input
                         type="email"
-                        class="form-control"
+                        className="form-control"
                         id="password"
                         placeholder="Enter your password"
                     />
                 </div>
                 <input type="submit" className="form-control" value="Login" />
                 <p className="text-center py-2">
-                    New to Flone App? <button>Create New Account.</button>
+                    New to Flone App?{" "}
+                    <button onClick={() => handleAuthForm("register")}>
+                        Create New Account.
+                    </button>
                 </p>
                 <div className="or-div d-flex align-items-center justify-content-center">
                     <div className="or-left"></div>
