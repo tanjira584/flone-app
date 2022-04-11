@@ -107,7 +107,11 @@ const HeaderMain = () => {
                         </div>
                         <div className="wish-icon">
                             <div className="count">0</div>
-                            <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
+                            <Link to="/wishlist">
+                                <FontAwesomeIcon
+                                    icon={faHeart}
+                                ></FontAwesomeIcon>
+                            </Link>
                         </div>
                         <div className="cart-icon">
                             <div className="count">0</div>
