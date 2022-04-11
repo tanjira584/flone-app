@@ -1,0 +1,65 @@
+.recet-box {
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+.recet-top ul,
+.recet-bottom ul,
+.recet-total ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.recet-top,
+.recet-middle,
+.recet-bottom,
+.recet-total {
+    padding-bottom: 24px;
+    border-bottom: 1px solid silver;
+}
+.recet-top ul li {
+    font-weight: 600;
+    font-size: 18px;
+}
+.recet-middle {
+    padding-top: 10px;
+}
+.recet-middle ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.recet-middle ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-weight: 500;
+}
+.recet-middle ul li p {
+    margin: 0;
+}
+.recet-bottom ul li {
+    margin-top: 24px;
+    font-weight: 600;
+}
+.recet-total ul li {
+    margin-top: 24px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #a749ff;
+}
+.place-order-btn {
+    padding: 12px 60px;
+    background-color: #a749ff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    color: #fff;
+    transition: 0.5s all;
+    border: none;
+    outline: none;
+}

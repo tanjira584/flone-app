@@ -182,7 +182,7 @@ const HeaderMain = () => {
                                     <p>$220.00</p>
                                 </div>
                                 <div className="cart-summery-btns">
-                                    <a href=" ">checkout</a>
+                                    <Link to="/checkout">Checkout</Link>
                                     <Link to="/cart">view cart</Link>
                                 </div>
                             </div>
