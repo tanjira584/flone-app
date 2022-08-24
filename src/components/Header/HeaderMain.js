@@ -19,9 +19,11 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "./HeaderMain.css";
 import { Link, NavLink } from "react-router-dom";
+import useCart from "../../hooks/useCart";
 
 const HeaderMain = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
+    const [cart, setCart] = useCart();
     const handleMobileMenu = (isOpen) => {
         if (!isOpen) {
             setMobileMenu(false);
@@ -120,66 +122,28 @@ const HeaderMain = () => {
                             ></FontAwesomeIcon>
                             <div className="cart-summery">
                                 <ul>
-                                    <li>
-                                        <div className="cart-summery-img">
-                                            <img
-                                                src="images/furniture/1.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="cart-summery-info">
-                                            <p>Lorem Ipsum Furniture one</p>
-                                            <p>
-                                                Qty: <span>1</span>
-                                            </p>
-                                            <p>$40.00</p>
-                                        </div>
-                                        <div className="cart-summery-icon">
-                                            <FontAwesomeIcon
-                                                icon={faTrash}
-                                            ></FontAwesomeIcon>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="cart-summery-img">
-                                            <img
-                                                src="images/furniture/2.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="cart-summery-info">
-                                            <p>Lorem Ipsum Furniture two</p>
-                                            <p>
-                                                Qty: <span>1</span>
-                                            </p>
-                                            <p>$30.00</p>
-                                        </div>
-                                        <div className="cart-summery-icon">
-                                            <FontAwesomeIcon
-                                                icon={faTrash}
-                                            ></FontAwesomeIcon>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="cart-summery-img">
-                                            <img
-                                                src="images/furniture/3.jpg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="cart-summery-info">
-                                            <p>Lorem Ipsum Furniture three</p>
-                                            <p>
-                                                Qty: <span>1</span>
-                                            </p>
-                                            <p>$46.00</p>
-                                        </div>
-                                        <div className="cart-summery-icon">
-                                            <FontAwesomeIcon
-                                                icon={faTrash}
-                                            ></FontAwesomeIcon>
-                                        </div>
-                                    </li>
+                                    {cart.map((product) => (
+                                        <li>
+                                            <div className="cart-summery-img">
+                                                <img src={product.img} alt="" />
+                                            </div>
+                                            <div className="cart-summery-info">
+                                                <p>{product.name}</p>
+                                                <p>
+                                                    Qty:{" "}
+                                                    <span>
+                                                        {product.quantity}
+                                                    </span>
+                                                </p>
+                                                <p>${product.price}</p>
+                                            </div>
+                                            <div className="cart-summery-icon">
+                                                <FontAwesomeIcon
+                                                    icon={faTrash}
+                                                ></FontAwesomeIcon>
+                                            </div>
+                                        </li>
+                                    ))}
                                 </ul>
                                 <div className="cart-summery-cost d-flex justify-content-between align-items-center">
                                     <p>Total</p>

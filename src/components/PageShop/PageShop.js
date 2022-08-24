@@ -7,8 +7,31 @@ import "./PageShop.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faListUl, faTh, faThLarge } from "@fortawesome/free-solid-svg-icons";
 import SingleProduct from "../SingleProduct/SingleProduct";
+import { useProducts } from "../../hooks/products";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const PageShop = () => {
+    // const [products] = useProducts();
+    const [totalPage, setTotalPage] = useState(1);
+    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(12);
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:5000/products?page=${page}&size=${size}`)
+            .then((res) => res.json())
+            .then((data) => setProducts(data));
+    }, [page, size]);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/productCount")
+            .then((res) => res.json())
+            .then((data) => {
+                const count = data.count;
+                const pages = Math.ceil(count / 12);
+                setTotalPage(pages);
+            });
+    }, []);
     return (
         <div>
             <Header></Header>
@@ -37,7 +60,8 @@ const PageShop = () => {
                                     </div>
                                     <div className="result-counter">
                                         <p className="m-0">
-                                            Showing 15 of 136 result
+                                            Showing {page * size + 12} of 136
+                                            result
                                         </p>
                                     </div>
 
@@ -64,15 +88,38 @@ const PageShop = () => {
                                 </div>
                                 <div className="all-shop-products mt-5">
                                     <div className="row">
-                                        <div className="col-lg-4">
-                                            <SingleProduct></SingleProduct>
-                                        </div>
-                                        <div className="col-lg-4">
-                                            <SingleProduct></SingleProduct>
-                                        </div>
-                                        <div className="col-lg-4">
-                                            <SingleProduct></SingleProduct>
-                                        </div>
+                                        {products.length > 0 &&
+                                            products.map((product) => (
+                                                <div
+                                                    className="col-lg-4"
+                                                    key={product._id}
+                                                >
+                                                    <SingleProduct
+                                                        product={product}
+                                                    ></SingleProduct>
+                                                </div>
+                                            ))}
+                                    </div>
+                                </div>
+                                <div className="pagination text-center mt-5 py-4">
+                                    <div className="text-center mx-auto">
+                                        {[...Array(totalPage).keys()].map(
+                                            (number) => (
+                                                <button
+                                                    key={number}
+                                                    onClick={() =>
+                                                        setPage(number)
+                                                    }
+                                                    className={
+                                                        page === number
+                                                            ? "text-light bg-success mx-2 py-2 px-3"
+                                                            : "mx-2 py-2 px-3"
+                                                    }
+                                                >
+                                                    {number + 1}
+                                                </button>
+                                            )
+                                        )}
                                     </div>
                                 </div>
                             </div>

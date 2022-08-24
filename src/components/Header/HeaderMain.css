@@ -182,7 +182,9 @@
     width: 340px;
     right: -26px;
     top: 127%;
-    background: silver;
+    background: rgb(255, 255, 255);
+    border: 1px solid silver;
+    z-index: 999;
 }
 .cart-icon:hover .cart-summery {
     display: block;
@@ -193,7 +195,7 @@
     position: absolute;
     top: -15px;
     right: 30px;
-    border-bottom: 20px solid silver;
+    border-bottom: 20px solid rgb(255, 255, 255);
     border-left: 14px solid transparent;
     border-right: 14px solid transparent;
 }
